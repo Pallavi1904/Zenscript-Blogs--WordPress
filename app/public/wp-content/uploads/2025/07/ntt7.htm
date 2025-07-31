@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# object: http://ogp.me/ns/object#" style="background-color: #131313;"  data-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36" lang="en">
+<head>
+    <!-- Start js_head_top  -->
+        <script type="text/plain" data-category="analytics" nonce="MTcxNzM0NjQ3NDE3NTM4Nzc3ODQzMDEy">
+    (function(h, o, u, n, d) {
+        h = h[d] = h[d] || {
+            q: [],
+            onReady: function(c) {
+                h.q.push(c)
+            }
+        }
+        d = o.createElement(u);
+        d.async = 1;
+        d.src = n;
+        d.nonce="MTcxNzM0NjQ3NDE3NTM4Nzc3ODQzMDEy";
+        n = o.getElementsByTagName(u)[0];
+        n.parentNode.insertBefore(d, n);
+    })(window, document, 'script', 'https://www.datadoghq-browser-agent.com/us1/v5/datadog-rum.js', 'DD_RUM')
+
+    function shouldDiscard(event) {
+        // Ignore stocksylytics fetch errors - these are expected and we have retry logic in place
+        // TODO: Do we want to handle these errors differently in the future?
+        if (event?.error?.message.match(/Fetch error POST.*\/stocksylytics\//)) {
+            return true;
+        }
+        return false;
+    }
+
+    let ddInit = {
+        site: 'datadoghq.com',
+        sampleRate: 100,
+        sessionReplaySampleRate: 5,
+        trackUserInteractions: true,
+        trackResources: true,
+        trackLongTasks: true,
+        defaultPrivacyLevel: 'mask-user-input',
+        allowedTracingOrigins: [/https:\/\/.*\.stocksy\.com/],
+        beforeSend: (event) => {
+            if (shouldDiscard(event)) {
+                return false;
+            }
+        },
+    };
+
+    ddInit.applicationId = '7af2bfdf-2e3a-4265-a2a7-6d4d82cf90c8';
+    ddInit.clientToken = 'pub0d1074f61c7d4b8584d62764430f5a1b';
+    ddInit.service = 'stocksy-production-app';
+    ddInit.env = 'production';
+    ddInit.version = 'main-released-9548';
+    // This, and the startView below, allow us to overwrite the default view name in DD to our choosing
+    ddInit.trackViewsManually = true;
+    ddInit.name = 'photo-adp';
+
+    let dd_user = {type: 'client'};
+    
+    DD_RUM.onReady(function() {
+        DD_RUM.init(ddInit);
+        DD_RUM.setUser(dd_user);
+
+       if (ddInit.trackViewsManually) {
+            DD_RUM.startView({
+                name: 'photo-adp'
+            });
+       }
+
+    });
+</script>
+<script nonce="MTcxNzM0NjQ3NDE3NTM4Nzc3ODQzMDEy" type="a9d665a219665822ac6ed7f9-text/javascript">
+    window.automatedTesting = false;
+    window.isBot = false;
+    window.cookieConsentEnabled = 1;
+    window.lang = 'en';
+</script>
+<!-- GAN HEAD --><script type="text/plain" data-category="analytics" nonce="MTcxNzM0NjQ3NDE3NTM4Nzc3ODQzMDEy" async src="https://www.googletagmanager.com/gtag/js?id=G-CGNRWBZ2SV" data-cfasync="false"></script>
+<script type="text/plain" data-category="analytics" nonce="MTcxNzM0NjQ3NDE3NTM4Nzc3ODQzMDEy">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+
+  var userId = null;
+  var userProperties = {
+    'user_type': 'null',
+    'user_is_staff': false,
+    'user_is_contributor': false  };
+  var gaUAConfigOptions = {
+    'user_id': userId,
+    'dimension7': 'null',
+    'dimension8': false,
+    'dimension9': false  };
+  var ga4ConfigOptions = {
+    'user_id': userId
+  };
+  var debugOptions = { 'debug_mode': true };
+
+  gtag('js', new Date());
+
+
+  gtag('config', 'G-CGNRWBZ2SV', ga4ConfigOptions);
+
+
+</script>
+<!-- GAN HEAD END -->
+    <!-- End js_head_top -->
+
+    <meta name="jwt" content="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3d3dy5zdG9ja3N5LmNvbSIsImF1ZCI6IjIxM2ZmNjE4Yzk5Y2Q3ZGM4MWM2ZWE4NTI3YmQyY2Q1IiwiZXhwIjoxNzU0NDgyNTg0LjY5NTY0NiwiaWF0IjoxNzUzODc3Nzg0LjY5NTY0NiwibmJmIjoxNzUzODc3Nzg0LjY5NTY0Niwic3ViIjoiL3Bob3RvLzg0OTU5Ny9oaWtlci1vbi1tb3VudGFpbi10b3AtbG9va2luZy1hdC10aGUtc2VhLW9uLXN1bnNldCJ9.4YyzKii7L83lUgAkMdJLHCPRJYQgHiO5arY3xRs_s9o">
+
+    <link rel="preload" href="/dist/css/primary-site.min.926e611ddb571e7ad2c2.css" as="style">
+    <link rel="preload" href="/dist/css/primary-common-vendors.42478f425d3757bb082b.css" as="style">
+    <link rel="manifest" href="/manifest.webmanifest.json" crossorigin="use-credentials" />
+                    <link rel="preload" href="https://c.stocksy.com/a/B1Z300/z9/849597.jpg" as="image" />
+    
+    <!-- Start include translations -->
+    <meta property="globalDictionary" content="{&quot;lng&quot;:&quot;en&quot;,&quot;debug&quot;:false,&quot;keySeparator&quot;:false,&quot;resources&quot;:{&quot;en&quot;:{&quot;translation&quot;:[]}}}" />    <!-- End include translations -->
+
+    <link href="/dist/css/primary-common-vendors.42478f425d3757bb082b.css" media="all" rel="stylesheet" type="text/css" >
+<link href="/dist/css/primary-site.min.926e611ddb571e7ad2c2.css" media="all" rel="stylesheet" type="text/css" >
+<link href="https://www.stocksy.com/" hreflang="x-default" rel="alternate" >
+<link href="https://www.stocksy.com/photo/849597/hiker-on-mountain-top-looking-at-the-sea-on-sunset" hreflang="en" rel="alternate" >
+<link href="https://www.stocksy.com/es/photo/849597/hiker-on-mountain-top-looking-at-the-sea-on-sunset" hreflang="es" rel="alternate" >
+<link href="https://ajax.cloudflare.com" rel="dns-prefetch" >
+<link href="https://analytics.tiktok.com" rel="dns-prefetch" >
+<link href="https://bid.g.doubleclick.net" rel="dns-prefetch" >
+<link href="https://connect.facebook.net" rel="dns-prefetch" >
+<link href="https://ct.pinterest.com" rel="dns-prefetch" >
+<link href="https://fonts.googleapis.com" rel="dns-prefetch" >
+<link href="https://googleads.g.doubleclick.net" rel="dns-prefetch" >
+<link href="https://in.hotjar.com" rel="dns-prefetch" >
+<link href="https://p.adsymptotic.com" rel="dns-prefetch" >
+<link href="https://prd-stocksy-public.s3.amazonaws.com" rel="dns-prefetch" >
+<link href="https://px.ads.linkedin.com" rel="dns-prefetch" >
+<link href="https://rum-http-intake.logs.datadoghq.com" rel="dns-prefetch" >
+<link href="https://s.pinimg.com" rel="dns-prefetch" >
+<link href="https://script.hotjar.com" rel="dns-prefetch" >
+<link href="https://snap.licdn.com" rel="dns-prefetch" >
+<link href="https://static.ads-twitter.com" rel="dns-prefetch" >
+<link href="https://static.cloudflareinsights.com" rel="dns-prefetch" >
+<link href="https://static.hotjar.com" rel="dns-prefetch" >
+<link href="https://static.zdassets.com" rel="dns-prefetch" >
+<link href="https://stats.g.doubleclick.net" rel="dns-prefetch" >
+<link href="https://vars.hotjar.com" rel="dns-prefetch" >
+<link href="https://vc.hotjar.io" rel="dns-prefetch" >
+<link href="https://www.datadoghq-browser-agent.com" rel="dns-prefetch" >
+<link href="https://www.facebook.com" rel="dns-prefetch" >
+<link href="https://www.google-analytics.com" rel="dns-prefetch" >
+<link href="https://www.google.com" rel="dns-prefetch" >
+<link href="https://www.googleadservices.com" rel="dns-prefetch" >
+<link href="https://www.googleoptimize.com" rel="dns-prefetch" >
+<link href="https://www.googletagmanager.com" rel="dns-prefetch" >
+<link href="https://zt4j2hv7d4.execute-api.us-east-1.amazonaws.com" rel="dns-prefetch" >
+<link href="https://js.hscollectedforms.net" rel="dns-prefetch" >
+<link href="https://js.hs-analytics.net" rel="dns-prefetch" >
+<link href="https://js.hs-banner.com" rel="dns-prefetch" >
+<link href="https://js.hs-scripts.com" rel="dns-prefetch" >
+<link href="https://api.hubapi.com" rel="dns-prefetch" >
+<link href="https://forms.hubspot.com" rel="dns-prefetch" >
+<link href="/favicon.png" rel="Shortcut Icon" type="image/png" >
+<link href="/favicon.png" rel="icon" type="image/png" sizes="192x192" >
+<link href="/images/icon/apple-touch-icon-180x180-precomposed.png" rel="apple-touch-icon-precomposed" type="image/png" sizes="180x180" >
+<link href="/images/icon/apple-touch-icon-152x152-precomposed.png" rel="apple-touch-icon-precomposed" type="image/png" sizes="152x152" >
+<link href="/images/icon/apple-touch-icon-144x144-precomposed.png" rel="apple-touch-icon-precomposed" type="image/png" sizes="144x144" >
+<link href="/images/icon/apple-touch-icon-120x120-precomposed.png" rel="apple-touch-icon-precomposed" type="image/png" sizes="120x120" >
+<link href="/images/icon/apple-touch-icon-114x114-precomposed.png" rel="apple-touch-icon-precomposed" type="image/png" sizes="114x114" >
+<link href="/images/icon/apple-touch-icon-76x76-precomposed.png" rel="apple-touch-icon-precomposed" type="image/png" sizes="76x76" >
+<link href="/images/icon/apple-touch-icon-72x72-precomposed.png" rel="apple-touch-icon-precomposed" type="image/png" sizes="72x72" >
+<link href="/images/icon/apple-touch-icon-precomposed.png" rel="apple-touch-icon-precomposed" type="image/png" sizes="192x192" >
+<link href="/favicon.ico" rel="icon" sizes="32x32" >
+<link href="/images/icon/icon.svg" rel="icon" type="image/svg+xml" >
+<link href="/images/icon/apple-touch-icon.png" rel="apple-touch-icon" type="image/png" sizes="180x180" >
+<link href="/images/icon/safari-pinned-tab.svg" rel="mask-icon" type="image/png" >
+<link href="https://www.stocksy.com/photo/849597/hiker-on-mountain-top-looking-at-the-sea-on-sunset" id="canonical" rel="canonical" >    <title>&quot;Hiker On Mountain Top Looking At The Sea On Sunset&quot; by Stocksy Contributor  &quot;Ilya&quot; - Stocksy</title>    <meta property="turnstileSitekey" content="0x4AAAAAAAkEVhCkSkwNej-n" >
+<meta charset="utf-8">
+<meta property="anonymousId" content="213ff618c99cd7dc81c6ea8527bd2cd5" >
+<meta property="controllerAction" content="asset-details" >
+<meta property="environment" content="production" >
+<meta property="fb:admins" content="100004061566968" >
+<meta property="og:site_name" content="Stocksy United" >
+<meta property="og:type" content="website" >
+<meta property="stocksylytics" content="https://zt4j2hv7d4.execute-api.us-east-1.amazonaws.com/stocksylytics" >
+<meta property="authsyCookieName" content="session" >
+<meta property="automatedTesting" content="" >
+<meta name="facebook-domain-verification" content="85tu0kf0hdfyezrz9z7d48bn8wcp9z" >
+<meta name="twitter:account_id" content="1578194636" >
+<meta name="apple-mobile-web-app-title" content="Stocksy" >
+<meta name="application-name" content="Stocksy" >
+<meta name="msapplication-TileColor" content="#0AE47C" >
+<meta name="theme-color" content="#ffffff" >
+<meta name="viewport" content="width=device-width, initial-scale=1.0" >
+<meta property="UserStore" content="{&quot;loggedIn&quot;:false,&quot;tourStatus&quot;:null,&quot;follows&quot;:false,&quot;language&quot;:&quot;en&quot;}" >
+<meta property="AppStore" content="{&quot;locale&quot;:&quot;en&quot;,&quot;electionItemCount&quot;:0,&quot;siteFlags&quot;:{&quot;showAGMLink&quot;:false,&quot;showNotificationBar&quot;:false,&quot;yearOfTheCoopActive&quot;:false},&quot;masquerade&quot;:null,&quot;graphql&quot;:{&quot;endpoints&quot;:{&quot;https&quot;:&quot;https:\/\/www.stocksy.com\/graphql&quot;,&quot;wss&quot;:&quot;wss:\/\/www.stocksy.com\/graphql&quot;}}}" >
+<meta property="user" content="false" >
+<meta property="userId" content="" >
+<meta property="userType" content="client" >
+<meta property="userIp" content="2409:40c2:115d:300b:889b:1592:736b:49a7" >
+<meta property="experiments_status" content="[]" >
+<meta property="actionContext" content="assetDetails" >
+<meta property="template" content="asset-details" >
+<meta property="analyticsPagename" content="assetdetails" >
+<meta property="contentId" content="849597" >
+<meta property="ownerId" content="394" >
+<meta name="description" content="&quot;Hiker on mountain top looking at the sea on sunset&quot; Download this high-resolution, royalty-free stock photo by Ilya from Stocksy United." >
+<meta property="keywords" content="stock photo,royalty free,licensed photography,photos,active,adventure,backpacker,backpacking,beach,cliff,copyspace,egypt,explore,explorer,happy,harmony,hike,hiker,hiking,holiday,joy,landscape,lifestyle,man,mountain,nature,ocean,outdoors,peak,real people,recreation,rock,scenic,sea,summer,summit,sun,sunset,travel,walk,water,wellbeing" >
+<meta property="asset" content="image" >
+<meta property="upload date" content="2016-01-05 09:23:20" >
+<meta property="og:url" content="https://www.stocksy.com/photo/849597/hiker-on-mountain-top-looking-at-the-sea-on-sunset" >
+<meta property="og:image" content="https://c.stocksy.com/a/B1Z300/z9/849597.jpg" >
+<meta property="og:title" content="&quot;Hiker On Mountain Top Looking At The Sea On Sunset&quot; by Stocksy Contributor  &quot;Ilya&quot;" >
+<meta property="og:description" content="Male backpacker standing on mountain top looking away to the Red Sea at sunset. Shot made in Dahab, Egypt, Sinai Peninsula." >
+<meta property="article:author" content="https://www.stocksy.com/ilya" >
+<meta property="og:image:secure_url" content="https://c.stocksy.com/a/B1Z300/z9/849597.jpg" >
+<meta property="og:image:type" content="image/jpeg" >
+<meta property="twitter:card" content="photo" >
+<meta property="twitter:site " content="@stocksyunited" >
+<meta property="twitter:url" content="https://www.stocksy.com/photo/849597/hiker-on-mountain-top-looking-at-the-sea-on-sunset" >
+<meta property="twitter:title" content="&quot;Hiker On Mountain Top Looking At The Sea On Sunset&quot; by Stocksy Contributor  &quot;Ilya&quot;" >
+<meta property="twitter:description" content="Male backpacker standing on mountain top looking away to the Red Sea at sunset. Shot made in Dahab, Egypt, Sinai Peninsula." >
+<meta property="twitter:image" content="https://c.stocksy.com/a/B1Z300/z9/849597.jpg" >
+<meta property="og:image:width" content="1200" >
+<meta property="og:image:height" content="710" >
+<meta property="twitter:image:width" content="1200" >
+<meta property="twitter:image:height" content="710" >
+<meta property="rootUrl" content="/" >        <script type="application/ld+json">
+    {"@context":"https:\/\/schema.org","height":710,"width":1200,"identifier":849597,"name":"\"Hiker on mountain top looking at the sea on sunset\" by Stocksy Contributor \"Ilya\"","description":"Male backpacker standing on mountain top looking away to the Red Sea at sunset. Shot made in Dahab, Egypt, Sinai Peninsula.","url":"\/photo\/849597\/hiker-on-mountain-top-looking-at-the-sea-on-sunset","image":"https:\/\/c.stocksy.com\/a\/B1Z300\/z9\/849597.jpg","offers":{"@type":"AggregateOffer","availability":"http:\/\/schema.org\/InStock","offerCount":3,"lowPrice":35,"highPrice":135,"priceCurrency":"usd"},"@type":"Product","productID":849597,"sku":849597,"brand":{"@type":"Brand","name":"Stocksy United","logo":"https:\/\/c.stocksy.com\/c\/static\/stocksy_noCircle_BLACK.png"}}</script>
+<script type="application/ld+json">
+    {"@context":"https:\/\/schema.org","height":710,"width":1200,"identifier":849597,"name":"\"Hiker on mountain top looking at the sea on sunset\" by Stocksy Contributor \"Ilya\"","description":"Male backpacker standing on mountain top looking away to the Red Sea at sunset. Shot made in Dahab, Egypt, Sinai Peninsula.","url":"\/photo\/849597\/hiker-on-mountain-top-looking-at-the-sea-on-sunset","image":"https:\/\/c.stocksy.com\/a\/B1Z300\/z9\/849597.jpg","offers":{"@type":"AggregateOffer","availability":"http:\/\/schema.org\/InStock","offerCount":3,"lowPrice":35,"highPrice":135,"priceCurrency":"usd"},"thumbnail":"https:\/\/c.stocksy.com\/a\/B1Z300\/z9\/849597.jpg","author":{"@type":"Organization","name":"Ilya"},"provider":{"@type":"Organization","name":"Stocksy United"},"caption":"Male backpacker standing on mountain top looking away to the Red Sea at sunset. Shot made in Dahab, Egypt, Sinai Peninsula.","acquireLicensePage":"\/photo\/849597\/hiker-on-mountain-top-looking-at-the-sea-on-sunset","license":"https:\/\/www.stocksy.com\/legal\/contentlicense","thumbnailUrl":"https:\/\/c.stocksy.com\/a\/B1Z300\/z9\/849597.jpg","uploadDate":"2016-01-05T09:23:20+0000","contentUrl":"\/photo\/849597\/hiker-on-mountain-top-looking-at-the-sea-on-sunset","@type":"ImageObject"}</script>
+    <!-- js_head_bottom  -->
+                <!-- FB HEAD --><script type="text/plain" data-category="targeting" nonce="MTcxNzM0NjQ3NDE3NTM4Nzc3ODQzMDEy">
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.nonce="MTcxNzM0NjQ3NDE3NTM4Nzc3ODQzMDEy";
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '447554626444887');
+fbq('track', 'PageView');
+</script>
+<!-- <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=447554626444887&ev=PageView&noscript=1"/></noscript> -->
+<!-- FB HEAD END -->
+        <!-- PINTEREST HEAD --><!-- Pinterest Tag -->
+<meta name="p:domain_verify" content="5349ee3e550192e047a25d0644fa20ec"/>
+<script type="text/plain" data-category="targeting" nonce="MTcxNzM0NjQ3NDE3NTM4Nzc3ODQzMDEy">
+!function(e){if(!window.pintrk){window.pintrk = function () {
+window.pintrk.queue.push(Array.prototype.slice.call(arguments))};var
+      n=window.pintrk;n.queue=[],n.version="3.0";var
+      t=document.createElement("script");t.async=!0,t.src=e;t.nonce="MTcxNzM0NjQ3NDE3NTM4Nzc3ODQzMDEy";var
+      r=document.getElementsByTagName("script")[0];
+      r.parentNode.insertBefore(t,r)}}("https://s.pinimg.com/ct/core.js");
+pintrk('load', '2620548198183', {em: ''});
+pintrk('page');
+
+function getMetaProperty(prop) {
+    const el = document.head.querySelector(`[property=${prop}][content]`);
+    return el ? el.getAttribute('content') : "";
+}
+
+pintrk('track', 'pagevisit', { product_id: getMetaProperty('contentId') });
+</script>
+<!-- end Pinterest Tag -->
+<!-- <noscript><img height="1" width="1" style="display:none;" alt="" src="https://ct.pinterest.com/v3/?tid=2620548198183&pd[em]=&noscript=1" /></noscript> -->
+<!-- PINTEREST HEAD END -->
+        <!-- TIKTOK HEAD --><script type="text/plain" data-category="targeting" nonce="MTcxNzM0NjQ3NDE3NTM4Nzc3ODQzMDEy">
+!function (w, d, t) { w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var i="https://analytics.tiktok.com/i18n/pixel/events.js";ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=i,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};var o=document.createElement("script");o.type="text/javascript",o.async=!0,o.src=i+"?sdkid="+e+"&lib="+t;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(o,a)};
+ttq.load('CEEBE03C77U87C9M5QF0');ttq.page();
+}(window,document,'ttq');</script>
+<!-- TIKTOK HEAD END -->
+        <!-- BING HEAD --><script type="text/plain" data-category="targeting" nonce="MTcxNzM0NjQ3NDE3NTM4Nzc3ODQzMDEy">
+(function(w, d, t, r, u) {var f, n, i;w[u] = w[u] || [], f = function() {var o = {ti: "343159020",enableAutoSpaTracking: true};o.q = w[u], w[u] = new UET(o), w[u].push("pageLoad")}, n = d.createElement(t), n.src = r, n.async = 1, n.onload = n.onreadystatechange = function() {var s = this.readyState;s && s !== "loaded" && s !== "complete" || (f(), n.onload = n.onreadystatechange = null)}, i = d.getElementsByTagName(t)[0], i.parentNode.insertBefore(n, i)})(window, document, "script", "//bat.bing.com/bat.js", "uetq");
+</script>
+<!-- BING HEAD END -->
+        <!-- HOCKEYSTACK HEAD --><script type="text/plain" data-category="analytics" nonce="MTcxNzM0NjQ3NDE3NTM4Nzc3ODQzMDEy">
+  var hsscript = document.createElement("script");
+    hsscript.id = "wphs";
+    hsscript.src = "https://cdn.jsdelivr.net/npm/hockeystack@latest/hockeystack.min.js";
+    hsscript.async = 1;
+    hsscript.dataset.apikey = "6fc76667af6ce632053f9ed05c79b3";
+    hsscript.dataset.cookieless = 1;
+    hsscript.dataset.autoIdentify = 1;
+    document.getElementsByTagName('head')[0].append(hsscript);
+  </script>
+<!-- HOCKEYSTACK HEAD END -->
+        <!-- ZOOMINFO HEAD --><script type="text/plain" data-category="targeting" nonce="MTcxNzM0NjQ3NDE3NTM4Nzc3ODQzMDEy">
+window[(function(_IEW,_KW){var _nelug='';for(var _Rwqdv1=0;_Rwqdv1<_IEW.length;_Rwqdv1++){var _eDEy=_IEW[_Rwqdv1].charCodeAt();_eDEy-=_KW;_eDEy+=61;_eDEy%=94;_eDEy+=33;_nelug==_nelug;_KW>8;_eDEy!=_Rwqdv1;_nelug+=String.fromCharCode(_eDEy)}return _nelug})(atob('Z1ZdIXx3cnAjWHIo'),13)]='58d22a3e9f1739295096';var zi=document.createElement('script');(zi.type='text/javascript'),(zi.async=true),(zi.src=(function(_vdg,_NW){var _GSOBE='';for(var _kEiTqi=0;_kEiTqi<_vdg.length;_kEiTqi++){var _lBMN=_vdg[_kEiTqi].charCodeAt();_NW>6;_lBMN-=_NW;_lBMN+=61;_lBMN%=94;_GSOBE==_GSOBE;_lBMN+=33;_lBMN!=_kEiTqi;_GSOBE+=String.fromCharCode(_lBMN)}return _GSOBE})(atob('MT09OTxhVlYzPFVDMlQ8LDsyOT08VSw4NlZDMlQ9KjBVMzw='),39)),document.readyState==='complete'?document.body.appendChild(zi):window.addEventListener('load',function(){document.body.appendChild(zi)});
+</script>
+<!-- ZOOMINFO HEAD END -->
+        <!-- HJR HEAD --><script type="text/plain" data-category="analytics" nonce="MTcxNzM0NjQ3NDE3NTM4Nzc3ODQzMDEy">
+    (function(h,o,t,j,a,r){
+    h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+    h._hjSettings={hjid:2245333,hjsv:6};
+    a=o.getElementsByTagName('head')[0];
+    r=o.createElement('script');r.async=1;
+    r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+    r.nonce="MTcxNzM0NjQ3NDE3NTM4Nzc3ODQzMDEy";
+    a.appendChild(r);
+})(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+<!-- HJR HEAD END -->
+<script nonce="MTcxNzM0NjQ3NDE3NTM4Nzc3ODQzMDEy" src="/dist/js/runtime.b78deff9a37d1b4bd7de.js" type="a9d665a219665822ac6ed7f9-text/javascript"></script>
+<script nonce="MTcxNzM0NjQ3NDE3NTM4Nzc3ODQzMDEy" src="/dist/js/global-vendors.fbdd606c507420663c22.js" type="a9d665a219665822ac6ed7f9-text/javascript"></script>
+<script nonce="MTcxNzM0NjQ3NDE3NTM4Nzc3ODQzMDEy" src="/dist/js/primary-common-vendors.34a16e32b736d4de6d69.js" type="a9d665a219665822ac6ed7f9-text/javascript"></script>
+<script nonce="MTcxNzM0NjQ3NDE3NTM4Nzc3ODQzMDEy" src="/dist/js/primary-site.min.111f043444124058fa29.js" type="a9d665a219665822ac6ed7f9-text/javascript"></script>
+    <!-- STRIPE HEAD --><script nonce="MTcxNzM0NjQ3NDE3NTM4Nzc3ODQzMDEy" src="https://js.stripe.com/v3/" async type="a9d665a219665822ac6ed7f9-text/javascript"></script>
+<!-- STRIPE HEAD END -->
+
+<!-- GSR HEAD --><script type="text/plain" data-category="analytics" nonce="MTcxNzM0NjQ3NDE3NTM4Nzc3ODQzMDEy">
+window.dataLayer = window.dataLayer || [];
+window.dataLayer.push({"getSetReff": "v1.0", "setDomain": ".www.stocksy.com"});
+</script>
+<script type="text/plain" data-category="analytics" nonce="MTcxNzM0NjQ3NDE3NTM4Nzc3ODQzMDEy" src="/dist/vendor/getSetReff/getSetReff.min.js"></script>
+<script type="text/plain" data-category="analytics" nonce="MTcxNzM0NjQ3NDE3NTM4Nzc3ODQzMDEy">
+window.getSetReff && window.getSetReff();
+</script>
+<!-- GSR HEAD END -->
+
+<!-- Thank you for using Stocksy today. Your host: stocksy-production-app-5cc4bd5bb6-wkxl8 -->
+    <!-- End js_head_bottom  -->
+</head>
+
+<body  class="dark-mode">
+    
+    <div id="notificationWrapper"></div>
+    <!-- index / homepage doesn't have sticky padding, but all other pages do -->
+    <div id="wrap"
+         class="pagecontext-asset-details sticky-padding ">
+        
+<div id="modalHelperRoot" class="modal fade"></div>
+
+
+<nav id="reactNavBar" data-testid="navBar" aria-label="Main Navigation" ></nav>
+<div id="reactModals" aria-modal="true" role="dialog"></div>
+<div id="toastContainer"></div>
+<div id="newsLetterPopUp"></div>
+
+
+
+
+
+        <div id="notifications"></div>
+        <div id="details-container"></div>
+<script nonce="MTcxNzM0NjQ3NDE3NTM4Nzc3ODQzMDEy" type="a9d665a219665822ac6ed7f9-text/javascript">console.info('carousel query time: ');</script>
+
+    </div>
+    <footer id="reactFooter"></footer>
+    <script nonce="MTcxNzM0NjQ3NDE3NTM4Nzc3ODQzMDEy" type="a9d665a219665822ac6ed7f9-text/javascript">   window.lookupData = window.lookupData || {};   window.lookupData['view_asset/details'] = {"public":true,"assetDetails":{"mature":false,"likeCount":2,"itemData":{"assetId":849597,"cRef":511725,"author":{"avatarUrl":"https:\/\/c.stocksy.com\/i\/M60000b1","handle":"ilya","location":"Lithuania","string":"Ilya","type":"Organization","userId":394},"colors":["7f8fa6","2c2020","a2abaa","e39d61","5d5855","ffbc54","d17d3d","423c4a","0a0404"],"camera":"Canon EOS 5D Mark II","date":"January 5, 2016 9:23 AM","creationDate":"2016-01-05 09:23:20","description":"Male backpacker standing on mountain top looking away to the Red Sea at sunset. Shot made in Dahab, Egypt, Sinai Peninsula.","fps":null,"modelIds":["8803"],"propertyReleaseIds":[],"title":"Hiker on mountain top looking at the sea on sunset","type":"photo_creative","contentType":"photo","seriesId":36452,"variations":{"jpgComp":{"url":"https:\/\/c.stocksy.com\/a\/B1Z300\/z9\/849597.jpg","dimensions":{"pixelwidth":1200,"pixelheight":710}},"videoComp":[]},"keywords":["adventure","backpacker","active","backpacking","beach","cliff","copyspace","egypt","explore","explorer","happy","harmony","hike","hiker","hiking","holiday","joy","landscape","lifestyle","man","mountain","nature","ocean","outdoors","peak","real people","recreation","rock","scenic","sea","summer","summit","sun","sunset","travel","walk","water","wellbeing"],"id":849597,"alt":"Hiker on mountain top looking at the sea on sunset by Ilya for Stocksy United","height":710,"width":1200,"reviewDate":"January 06, 2016 10:42 PM"},"share":{"assetId":849597,"handle":"ilya","displayName":"Ilya","canonicalUrl":"\/photo\/849597\/hiker-on-mountain-top-looking-at-the-sea-on-sunset","compUrl":"https:\/\/c.stocksy.com\/a\/B1Z300\/z9\/849597.jpg","shareTitle":"\"Hiker on mountain top looking at the sea on sunset\" by Stocksy Contributor \"Ilya\"","shareTumblr":"<a href=\"\/photo\/849597\/hiker-on-mountain-top-looking-at-the-sea-on-sunset\">Hiker on mountain top looking at the sea on sunset<\/a><br \/> By <a href=\"https:\/\/www.stocksy.com\/ilya\">ilya<\/a><br \/><br \/><b>Available to license exclusively at Stocksy<\/b>","shareTumblrTags":"adventure, backpacker, active, backpacking, beach, cliff, copyspace, egypt, explore, explorer, happy, harmony, hike, hiker, hiking, holiday, joy, landscape, lifestyle, man, mountain, nature, ocean, outdoors, peak, real people, recreation, rock, scenic, sea, summer, summit, sun, sunset, travel, walk, water, wellbeing"},"currentUserId":null,"currentUserFollowing":false,"currentUserCanMessage":false,"currentUserInGallery":false,"currentUserLiked":false,"matureFlag":false,"keywordFlagAcl":false,"keywordUnflagOverride":false,"flaggedKeywordsAndUserIds":null},"adminTools":false,"commenter":false,"cart":{"id":849597,"assetType":"photo_creative","upgradeTxId":null,"purchasedTxIds":null,"imageUrl":"https:\/\/c.stocksy.com\/a\/B1Z300\/z3\/849597.jpg","compAccess":false,"largestDeliverableTypeId":4,"products":{"deliverable":{"2":{"includedProductTypeId":[],"upgradeOriginal":false,"id":2,"categoryId":1,"productName":"Medium","productDescription":"A royalty free license for advertising, promotional and editorial use for one user. Print copies are limited to 500,000 and web use is unlimited.","assetType":"photo_creative","type":"deliverable","upgradeTypeId":0,"fullPrice":35,"priceReduction":0,"priceReductionId":0,"price":35,"onsale":false,"deliverable":{"variation":"jpgMedium","dimensions":{"pixelwidth":1839,"pixelheight":1088}},"isTeamLicense":0,"disabled":false,"preselected":false},"3":{"includedProductTypeId":[],"upgradeOriginal":false,"id":3,"categoryId":1,"productName":"Large","productDescription":"A royalty free license for advertising, promotional and editorial use for one user. Print copies are limited to 500,000 and web use is unlimited.","assetType":"photo_creative","type":"deliverable","upgradeTypeId":0,"fullPrice":85,"priceReduction":0,"priceReductionId":0,"price":85,"onsale":false,"deliverable":{"variation":"jpgLarge","dimensions":{"pixelwidth":3105,"pixelheight":1836}},"isTeamLicense":0,"disabled":false,"preselected":false},"4":{"includedProductTypeId":[],"upgradeOriginal":false,"id":4,"categoryId":1,"productName":"X-Large","productDescription":"A royalty free license for advertising, promotional and editorial use for one user. Print copies are limited to 500,000 and web use is unlimited.","assetType":"photo_creative","type":"deliverable","upgradeTypeId":0,"fullPrice":135,"priceReduction":0,"priceReductionId":0,"price":135,"onsale":false,"deliverable":{"variation":"jpgOriginalDelivery","dimensions":{"pixelwidth":5558,"pixelheight":3288}},"isTeamLicense":0,"disabled":false,"preselected":false}},"license":{"5":{"includedProductTypeId":[8],"upgradeOriginal":false,"id":5,"categoryId":2,"productName":"Unlimited Print","productDescription":"Removes restriction of 500,000 and allows for unlimited print copies.","assetType":"photo_creative","type":"license","upgradeTypeId":0,"fullPrice":300,"priceReduction":0,"priceReductionId":0,"price":300,"onsale":false,"licenseDeliverableRestraint":"any","isTeamLicense":0,"disabled":false,"preselected":false},"6":{"includedProductTypeId":[8],"upgradeOriginal":false,"id":6,"categoryId":2,"productName":"Products for Resale","productDescription":"Allows use of the image in your design to sell on t-shirts, greeting cards, posters, calendars, etc. Team License is included.","assetType":"photo_creative","type":"license","upgradeTypeId":0,"fullPrice":500,"priceReduction":0,"priceReductionId":0,"price":500,"onsale":false,"licenseDeliverableRestraint":"any","isTeamLicense":0,"disabled":false,"preselected":false},"8":{"includedProductTypeId":[],"upgradeOriginal":false,"id":8,"categoryId":2,"productName":"Team License","productDescription":"Allows for an unlimited number of users in an organization to use the content.","assetType":"photo_creative","type":"license","upgradeTypeId":0,"fullPrice":100,"priceReduction":0,"priceReductionId":0,"price":100,"onsale":false,"licenseDeliverableRestraint":"any","isTeamLicense":1,"disabled":false,"preselected":false},"18":{"includedProductTypeId":[5,6,8],"upgradeOriginal":false,"id":18,"categoryId":3,"productName":"Market Freeze Extended License (6 month)","productDescription":"For the duration of the term, no further licensing of this content will occur as agreed to in the Content License Agreement Addendum.","marketFreezeData":{"duration":{"extension":"new","length":6,"units":"months"},"projectedStartDate":"July 30, 2025","projectedStartDateObject":{},"projectedEndDate":"January 30, 2026","projectedEndDateObject":{}},"assetType":"photo_creative","type":"license","upgradeTypeId":0,"fullPrice":1250,"priceReduction":0,"priceReductionId":0,"price":1250,"onsale":false,"licenseDeliverableRestraint":"any","isTeamLicense":0,"disabled":false,"preselected":false},"19":{"includedProductTypeId":[5,6,8],"upgradeOriginal":false,"id":19,"categoryId":3,"productName":"Market Freeze Extended License (3 year)","productDescription":"For the duration of the term, no further licensing of this content will occur as agreed to in the Content License Agreement Addendum.","marketFreezeData":{"duration":{"extension":"new","length":3,"units":"years"},"projectedStartDate":"July 30, 2025","projectedStartDateObject":{},"projectedEndDate":"July 30, 2028","projectedEndDateObject":{}},"assetType":"photo_creative","type":"license","upgradeTypeId":0,"fullPrice":6000,"priceReduction":0,"priceReductionId":0,"price":6000,"onsale":false,"licenseDeliverableRestraint":"any","isTeamLicense":0,"disabled":false,"preselected":false},"20":{"includedProductTypeId":[5,6,8],"upgradeOriginal":false,"id":20,"categoryId":3,"productName":"Market Freeze Extended License (1 year)","productDescription":"For the duration of the term, no further licensing of this content will occur as agreed to in the Content License Agreement Addendum.","marketFreezeData":{"duration":{"extension":"new","length":1,"units":"years"},"projectedStartDate":"July 30, 2025","projectedStartDateObject":{},"projectedEndDate":"July 30, 2026","projectedEndDateObject":{}},"assetType":"photo_creative","type":"license","upgradeTypeId":0,"fullPrice":2500,"priceReduction":0,"priceReductionId":0,"price":2500,"onsale":false,"licenseDeliverableRestraint":"any","isTeamLicense":0,"disabled":false,"preselected":false},"24":{"includedProductTypeId":[5,6,8],"upgradeOriginal":false,"id":24,"categoryId":3,"productName":"Market Freeze Extended License (4 year)","productDescription":"For the duration of the term, no further licensing of this content will occur as agreed to in the Content License Agreement Addendum.","marketFreezeData":{"duration":{"extension":"new","length":4,"units":"years"},"projectedStartDate":"July 30, 2025","projectedStartDateObject":{},"projectedEndDate":"July 30, 2029","projectedEndDateObject":{}},"assetType":"photo_creative","type":"license","upgradeTypeId":0,"fullPrice":7500,"priceReduction":0,"priceReductionId":0,"price":7500,"onsale":false,"licenseDeliverableRestraint":"any","isTeamLicense":0,"disabled":false,"preselected":false},"25":{"includedProductTypeId":[5,6,8],"upgradeOriginal":false,"id":25,"categoryId":3,"productName":"Market Freeze Extended License (5 year)","productDescription":"For the duration of the term, no further licensing of this content will occur as agreed to in the Content License Agreement Addendum.","marketFreezeData":{"duration":{"extension":"new","length":5,"units":"years"},"projectedStartDate":"July 30, 2025","projectedStartDateObject":{},"projectedEndDate":"July 30, 2030","projectedEndDateObject":{}},"assetType":"photo_creative","type":"license","upgradeTypeId":0,"fullPrice":9000,"priceReduction":0,"priceReductionId":0,"price":9000,"onsale":false,"licenseDeliverableRestraint":"any","isTeamLicense":0,"disabled":false,"preselected":false},"26":{"includedProductTypeId":[5,6,8],"upgradeOriginal":false,"id":26,"categoryId":3,"productName":"Market Freeze Extended License (2 year)","productDescription":"[Empty Translation String]","marketFreezeData":{"duration":{"extension":"new","length":2,"units":"years"},"projectedStartDate":"July 30, 2025","projectedStartDateObject":{},"projectedEndDate":"July 30, 2027","projectedEndDateObject":{}},"assetType":"photo_creative","type":"license","upgradeTypeId":0,"fullPrice":4500,"priceReduction":0,"priceReductionId":0,"price":4500,"onsale":false,"licenseDeliverableRestraint":"any","isTeamLicense":0,"disabled":false,"preselected":false}}},"currentlySelectedProductTypeIds":[],"contentType":"photo","hasBeenPurchased":true,"cartId":101764210,"currency":"usd","couponCode":null,"handle":"ilya"},"rootUrl":"\/","currentUserId":null,"notification":null,"locals":{}};</script><script nonce="MTcxNzM0NjQ3NDE3NTM4Nzc3ODQzMDEy" src='/dist/js/views/asset/details.3043470b62f4fa735a7c.js' type="a9d665a219665822ac6ed7f9-text/javascript"></script>    <!-- LINKEDIN /BODY --><script type="text/plain" data-category="targeting"  nonce="MTcxNzM0NjQ3NDE3NTM4Nzc3ODQzMDEy">
+    _linkedin_partner_id = "4091105";
+    window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+    window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+</script>
+<script type="text/plain" data-category="targeting"  nonce="MTcxNzM0NjQ3NDE3NTM4Nzc3ODQzMDEy">
+    (function(l) {
+        if (!l) {
+            window.lintrk = function(a, b) {
+                window.lintrk.q.push([a, b])
+            };
+            window.lintrk.q = []
+        }
+        var s = document.getElementsByTagName("script")[0];
+        var b = document.createElement("script");
+        b.type = "text/javascript";
+        b.async = true;
+        b.nonce="MTcxNzM0NjQ3NDE3NTM4Nzc3ODQzMDEy";
+        b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+        s.parentNode.insertBefore(b, s);
+    })(window.lintrk);
+</script>
+<!-- <noscript><img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=4091105&fmt=gif" /></noscript> -->
+    <!-- LINKEDIN /BODY -->
+    <!-- TWITTER /BODY --><script type="text/plain" data-category="targeting" nonce="MTcxNzM0NjQ3NDE3NTM4Nzc3ODQzMDEy">
+!function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
+},s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='//static.ads-twitter.com/uwt.js',u.nonce="MTcxNzM0NjQ3NDE3NTM4Nzc3ODQzMDEy",
+a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
+twq('init','o7ak5');
+twq('track','PageView');
+</script>
+    <!-- TWITTER /BODY -->
+            <!-- HUBSPOT /BODY --><script type="text/plain" data-category="analytics" id="hs-script-loader" async defer src="//js.hs-scripts.com/22372133.js"></script>
+        <!-- HUBSPOT /BODY -->
+        <!-- SURVEYMONKEY /BODY--><!-- SURVEYMONKEY /BODY -->
+<style>
+    .smcx-branding {
+        visibility: hidden !important;
+    }
+
+    .smcx-modal>.smcx-modal-content {
+        height: 400px !important;
+    }
+
+    .smcx-modal {
+        height: 470px !important;
+        bottom: 0 !important;
+        top: auto !important;
+        right: 0 !important;
+        left: auto !important;
+    }
+</style>
+
+<!-- SURVEYMONKEY /BODY -->
+<!-- SURVEYMONKEY /BODY-->
+<script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="a9d665a219665822ac6ed7f9-|49" defer nonce="MTcxNzM0NjQ3NDE3NTM4Nzc3ODQzMDEy"></script><script nonce="MTcxNzM0NjQ3NDE3NTM4Nzc3ODQzMDEy">(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.nonce='MTcxNzM0NjQ3NDE3NTM4Nzc3ODQzMDEy';d.innerHTML="window.__CF$cv$params={r:'9674c97939404814',t:'MTc1Mzg3Nzc4NS4wMDAwMDA='};var a=document.createElement('script');a.nonce='MTcxNzM0NjQ3NDE3NTM4Nzc3ODQzMDEy';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+
+</html>
+<!--{{PLACEHOLDER:DEBUG_METRICS}}-->
