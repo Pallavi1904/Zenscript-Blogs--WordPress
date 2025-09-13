@@ -57,17 +57,3 @@ Goals of this project:
 
 ---
 
-## 📂 Project Structure
-```text
-Zenscript-Blogs--WordPress/
-│
-├── wp-admin/            # WordPress admin core
-├── wp-content/
-│   ├── themes/          # Custom theme(s)
-│   ├── plugins/         # Installed plugins
-│   └── uploads/         # Media files (ignored in Git)
-│
-├── wp-includes/         # WordPress core libraries
-├── wp-config.php        # WP configuration (ignored in Git)
-├── .gitignore
-└── README.md
