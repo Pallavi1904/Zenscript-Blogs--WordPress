@@ -19,14 +19,23 @@ Goals of this project:
 
 ## 📸 Screenshots
 
-### 🏠 Homepage
-![Homepage](screenshots/homepage.png)
 
-### 📝 Blog Page
-![Blog Page](screenshots/blog.png)
+![Homepage](Images/page1.png)
 
-### 📱 Mobile View
-![Mobile](screenshots/mobile.png)
+---
+![Homepage](Images/page2.png)
+
+---
+![Homepage](Images/page3.png)
+
+---
+![Homepage](Images/page4.png)
+
+---
+![Homepage](Images/page5.png)
+
+---
+![Homepage](Images/page7.png)
 
 ---
 
