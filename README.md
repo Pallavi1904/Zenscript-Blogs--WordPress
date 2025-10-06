@@ -1,4 +1,4 @@
-# 🌐 Zenscript Blogs — WordPress 
+# 🌐 Zenscript Blogs — WordPress
 
 Zenscript Blogs is a **WordPress-powered blogging project** created to provide a clean, modern, and responsive blogging experience.  
 This repository contains the WordPress setup along with custom themes, plugins, and configurations that power **Zenscript Blogs**.
